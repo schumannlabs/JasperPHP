@@ -1,5 +1,5 @@
 {
-    "name": "quilhasoft/jasperphp",
+    "name": "schumannlabs/jasperphp",
     "type": "library",
     "description": "Pure PHP library to read JRXML files made with 'JasperSoft Studio' and generate reports in PDF",
     "keywords": ["report", "jrxml", "jaspersoft", "pdf"],
