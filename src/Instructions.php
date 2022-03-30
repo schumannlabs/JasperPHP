@@ -44,7 +44,8 @@ final class Instructions {
     }
 
     public static function prepare($report) {
-        self::$instructionProcessor::prepare($report);
+        PdfProcessor::prepare($report);
+        //self::$instructionProcessor::prepare($report);
     }
 
     public static function addInstruction($instruction) {
