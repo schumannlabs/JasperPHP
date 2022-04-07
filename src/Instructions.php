@@ -25,7 +25,6 @@ final class Instructions {
     static public $y_axis;
     static public $arrayPageSetting;
     static public $print_expression_result;
-    static private $instructionProcessor = '\JasperPHP\PdfProcessor';
     static public $lastPageFooter = true;
     static public $processingPageFooter = false;
     
@@ -39,13 +38,8 @@ final class Instructions {
         
     }
 
-    public static function setProcessor($instructionProcessor) {
-        self::$instructionProcessor = $instructionProcessor;
-    }
-
     public static function prepare($report) {
         PdfProcessor::prepare($report);
-        //self::$instructionProcessor::prepare($report);
     }
 
     public static function addInstruction($instruction) {
@@ -84,7 +78,7 @@ final class Instructions {
             $methodName = $methodName == 'break' ? 'breaker' : $methodName;
 
             //$instructionProcessorClass = '\JasperPHP\/' + ;
-            $instruction = new self::$instructionProcessor($JasperObj);
+            $instruction = new PdfProcessor($JasperObj);
             if (method_exists($instruction, $methodName)) {
                 $instruction->$methodName($arraydata);
             }
